@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 메인 타일즈 -->
+	<definition name="main.tiles" 	 		template="/WEB-INF/jsp/egovframework/project/cmmn/main-layouts.jsp">
+	  	<put-attribute name="head"    		value="/WEB-INF/jsp/egovframework/project/cmmn/default-head.jsp" />
+	  	<put-attribute name="header" 		value="/WEB-INF/jsp/egovframework/project/cmmn/default-header.jsp" />
+	  	<put-attribute name="content"  		value="" />
+	</definition>
+	<definition name="*/*.tiles" extends="main.tiles">
+	  	<put-attribute name="content"   value="/WEB-INF/jsp/egovframework/project/{1}/{2}.jsp" />
+	</definition>	
+</tiles-definitions>
