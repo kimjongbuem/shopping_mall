@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 04 21:58:14 KST 2021
+stringtemplate-3.2.1-sources.jar>mvn2s=
+stringtemplate-3.2.1.pom>mvn2s=
+stringtemplate-3.2.1.jar>mvn2s=
