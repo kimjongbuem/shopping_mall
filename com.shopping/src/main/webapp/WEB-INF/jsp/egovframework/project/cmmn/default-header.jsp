@@ -4,106 +4,137 @@
 <script src="js/header.js"></script>
 <link rel="stylesheet" href="css/egovframework/header.css">
 	<header>
-		<div id="header-first">
-			<div id="logo">
-				<a href="/main.do"><img alt="logo" src="/images/logo.png"/></a>
-			</div>
-			
-			<div id="searchForm">
-				<form method="post" action="">
-					<div class="input-group">
-					  <div class="form-outline">
-					    <input type="search" id="search_text" class="form-control" placeholder="search" />
-					    <label class="form-label" for="search_text"></label>
-					  </div>
-					  <button type="submit" class="btn btn-primary">
-					    <i class="fas fa-search"></i>
-					  </button>
-					</div>
-				</form>		
-			</div>
-			
-			<div class="my-list">
-				<ul>
-					<li><a href="#"><img alt="바구니" width="40px" height="40px" src="images/jang.png"/></a></li>
-					<li><a href="#"><img alt="찜" width="40px" height="40px" src="images/heart.png"/></a></li>
-					<li><a href="#"><img alt="마이" width="40px" height="40px" src="images/mypage.png"/></a></li>
-				</ul>
-			</div>
-		</div>
-		
-		<div id="header-second">
-				<div class="btn-group header-second-btn-box">
-						<button type="button" id="header-sec-home"
-							onclick=""
-							class="btn btn-basic header-second-btn-group border-btm-red">
-							홈</button>
-				
-						<button type="button" style=""
-							class="btn btn-basic header-second-btn-group category" onclick="">카테고리</button>
-						
-						<button type="button" id="header-best" style=""
-							class="btn btn-basic header-second-btn-group" onclick="">베스트</button>
-			
-						<button type="button" id="header-new" style=""
-							class="btn btn-basic header-second-btn-group" onclick="">하루배송</button>
-			
-						<button type="button" id="header-new" style=""
-							class="btn btn-basic header-second-btn-group" onclick="">신상</button>
-							
-				</div>
-		</div>
-		
-	</header>
-	
-	<div id="category-box" class="category not_active">
-			<ul class="menu category">
-				<li>
-					<a href="#">상의<br>
-					</a>
-					<ul class="sub-menu">
-						<li><a href="#">티셔츠</a></li>
-						<li><a href="#">후드</a></li>
-						<li><a href="#">맨투맨</a></li>
-						<li><a href="#">니트</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">바지</a>
-					<ul class="sub-menu">
-						<li><a href="#">청바지</a></li>
-						<li><a href="#">슬랙스</a></li>
-						<li><a href="#">면바지</a></li>
-						<li><a href="#">트레이닝</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">주얼리</a>
-					<ul class="sub-menu">
-						<li><a href="#">귀걸이</a></li>
-						<li><a href="#">목걸이</a></li>
-						<li><a href="#">팔찌</a></li>
-						<li><a href="#">반지</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">신발</a>
-					<ul class="sub-menu">
-						<li><a href="#">샌들</a></li>
-						<li><a href="#">힐</a></li>
-						<li><a href="#">스니커즈</a></li>
-						<li><a href="#">부츠</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">아우터</a>
-					<ul class="sub-menu">
-						<li><a href="#">자켓</a></li>
-						<li><a href="#">코트</a></li>
-						<li><a href="#">패딩</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+		<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-2">
+							<div class="header-logo">
+								<a href="/home.do" class="logo">
+									<img src="images/egovframework/logo1.png" alt="logo">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
 
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<select class="input-select">
+										<option value="0">All Categories</option>
+										<option value="1">Category 01</option>
+										<option value="1">Category 02</option>
+									</select>
+									<input class="input" placeholder="Search here">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-4 clearfix">
+							<div class="header-ctn">
+								<!-- Wishlist -->
+								<div>
+									<a href="#">
+										<i class="fa fa-heart"></i>
+										<span>WishList</span>
+										<div class="qty">2</div>
+									</a>
+								</div>
+								<!-- /Wishlist -->
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="qty">3</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product01.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<small>3 Item(s) selected</small>
+											<h5>SUBTOTAL: $2940.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">View Cart</a>
+											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
+								<div>
+									<a href="/login.do">
+										<i class="far fa-user"></i>
+										<span>MyPage</span>
+									</a>
+								</div>
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+	</header>
+
+	<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+					<div class="col-md-12" style="margin-top:20px;">
+						<ul class="nav navbar text-center">
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#">All Categories</a></li>
+							<li><a href="#">Accessories</a></li>
+							<li><a href="#">Headphones</a></li>
+						</ul>
+				</div>
+				<!-- /row -->
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+	
+	
 	

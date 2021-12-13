@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Dec 07 01:25:19 KST 2021
+org.eclipse.persistence.jpa-2.7.7-sources.jar>mvn2s=
+org.eclipse.persistence.jpa-2.7.7.pom>mvn2s=
+org.eclipse.persistence.jpa-2.7.7.jar>mvn2s=

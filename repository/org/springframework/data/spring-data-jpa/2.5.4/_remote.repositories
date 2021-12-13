@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Dec 07 01:16:19 KST 2021
+spring-data-jpa-2.5.4.jar>mvn2s=
+spring-data-jpa-2.5.4-sources.jar>mvn2s=
+spring-data-jpa-2.5.4.pom>mvn2s=
