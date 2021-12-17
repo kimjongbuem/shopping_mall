@@ -1,3 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Dec 07 00:02:15 KST 2021
+#Wed Dec 15 01:21:21 KST 2021
+log4j-api-2.14.1.jar>mvn2s=
 log4j-api-2.14.1.pom>mvn2s=
+log4j-api-2.14.1-sources.jar>mvn2s=
