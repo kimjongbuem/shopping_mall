@@ -28,7 +28,7 @@
 						Sign In With
 					</span>
 
-					<a href="#" class="">
+					<a href="https://kauth.kakao.com/oauth/authorize?client_id=7db2d9e7eeee1cd77fb3bb5eed95e3a8&redirect_uri=http://localhost:8080/oauth_kakao.do&response_type=code" class="">
 						<img src="images/egovframework/kakao_login.png" alt="kakao">
 
 					</a>
