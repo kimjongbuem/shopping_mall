@@ -17,13 +17,13 @@
 </script>
 
 <body>
-	<div class="mgb20 join-frm-header-title">
-	<span class="join-frm-header-title-span f30-bd-111">추가정보 입력하기</span>
-</div>
+	<h2 style="text-align: center; margin-top: 20px;">추가정보 입력하기</h2>
+
 <div class="frame join-frm">
 <article class="card-body" style="max-width: 700px; margin: auto;">
     <!-- 회원가입 form태그 시작 -->
-	<form method="post" action="user?cmd=kakaoJoin">
+	<form method="post" action="/user/create.do">
+	<input type="hidden" name="login" value="0"/>
 	<input type="hidden" name="kakaoId" value="${kakaoId}" />
 	<div class="form-group input-group fg-x700">
 		<div class="input-group-prepend">

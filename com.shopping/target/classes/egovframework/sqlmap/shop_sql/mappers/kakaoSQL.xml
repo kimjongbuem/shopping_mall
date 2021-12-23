@@ -3,7 +3,7 @@
 <mapper namespace="egovframework.project.mapper.KakaoMapper">
 
 	<select id="loginKakao" parameterType="long" resultType="egovframework.project.model.entity.User">
-			SELECT id, username, name, auth FROM user WHERE kakaoId = #{id}
+			SELECT id, userId, name, auth FROM user WHERE kakaoId = #{id}
 	</select>
 
 </mapper>

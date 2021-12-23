@@ -25,7 +25,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; // 번호
 	
-	private String username; // 아이디
+	private String userid; // 아이디
 	private String name; // 이름
 	private String email;
 	private String phone;

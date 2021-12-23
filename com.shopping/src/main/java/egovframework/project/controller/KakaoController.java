@@ -58,15 +58,19 @@ public class KakaoController{
 		URL url = new URL(reqURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("POST");
-		
 		conn.setRequestProperty("Authorization", "Bearer " + access_token);
 		
+		int responseCode = conn.getResponseCode();
+		
+		System.out.println(responseCode);
 		
 		//TODO: 수정
 		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 		while ((line = br.readLine()) != null) {
 			result += line;
 		}
+		
+		System.out.println(result);
 		
 		Gson gson = new Gson();
 		JsonParser parser = new JsonParser();

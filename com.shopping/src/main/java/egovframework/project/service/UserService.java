@@ -1,6 +1,7 @@
 package egovframework.project.service;
 
 import org.springframework.stereotype.Service;
+
 import egovframework.project.model.entity.User;
 
 
@@ -8,9 +9,14 @@ import egovframework.project.model.entity.User;
 public class UserService extends BaseService<User>{
 
 	@Override
-	public int create(User entity) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int create(User user) {
+		
+		System.out.println(baseRepository);
+		
+		User save = baseRepository.save(user);
+		
+		if(save == null) return 0;
+		else return 1;
 	}
 
 	@Override
