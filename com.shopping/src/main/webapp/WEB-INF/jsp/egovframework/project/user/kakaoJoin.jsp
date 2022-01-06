@@ -14,6 +14,37 @@
 	function jusoCallBack(roadFullAddr){
 		$("#Addr").val(roadFullAddr);
 	}
+	function checkUndisabledSignBtn(password){
+		if(password == 1) $("#kakaoBtn").removeAttr("disabled");
+		else $("#kakaoBtn").attr("kakaoBtn", true);
+	}
+	
+	$(function(){
+		$("#password").focusout(function(){
+			$.ajax({
+				url :"/user/checkPassword.do",
+				type: "post",
+				data : {password : $("#password").val()},
+				dataType : 'json',
+				success : function(result){
+					if(result == 0){
+						$("#checkPassword").html('최소 비밀번호는 8글자 이상이여야 합니다.');
+						$("#checkPassword").attr('color', 'red');
+						$("#passwordOk").val(0);
+					}
+					else{
+						$("#checkPassword").html('사용가능한 비밀번호 입니다.');
+						$("#checkPassword").attr('color', 'green');
+						$("#passwordOk").val(1);
+					}
+					checkUndisabledSignBtn($("#passwordOk").val());
+				},
+				error :function(){
+					alert("서버 요청 실패!")
+				}
+			})
+		});
+	});
 </script>
 
 <body>
@@ -54,10 +85,12 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="password" class="form-control" placeholder="비밀번호 입력" type="password" required />
+        <input name="password" id="password" class="form-control" placeholder="비밀번호 입력" type="password" required />
+    	<font id="checkPassword"></font>
+    	<input type="hidden" id="passwordOk" value=0/>
     </div> <!-- form-group// -->
     <div class="fg-x700 form-group">
-        <button type="submit" class="btn btn-primary btn-block"> 카카오로 회원가입 </button>
+        <button type="submit" id="kakaoBtn" class="btn btn-primary btn-block" disabled> 카카오로 회원가입 </button>
     </div> <!-- form-group// -->      
 </form>
 </article>

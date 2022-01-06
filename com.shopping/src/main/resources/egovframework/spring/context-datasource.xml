@@ -25,6 +25,8 @@
         <property name="password" value="root"/>
     </bean>
 
+     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>	
+
     
     <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

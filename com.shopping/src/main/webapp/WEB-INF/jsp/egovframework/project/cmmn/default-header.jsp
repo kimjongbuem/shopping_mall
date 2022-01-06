@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
+<%
+	request.setAttribute("id",session.getAttribute("id"));
+	session.setAttribute("id", session.getAttribute("id"));
+%>
+<script>
+	$(function(){
+		$(".search-btn").click(function(){
+			let searchSelectValue = $(".input-select").val();
+			let searchValue = $("#search").val();
+			$("#search-form").attr("action", "/search.do?searchSelectValue="+ searchSelectValue +"&searchValue="+searchValue);
+		});
+	});
+</script>
+
 <!-- header -->
 <script src="js/header.js"></script>
 <link rel="stylesheet" href="css/egovframework/header.css">
@@ -21,92 +35,48 @@
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
-						<div class="col-md-6">
+						<div class="col-md-6" style="margin-top: 10px;">
 							<div class="header-search">
-								<form>
+								<form id="search-form" method="post">
 									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
+										<option value="product" selected>Product Name</option>
+										<option value="company">Company Name</option>
 									</select>
-									<input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
+									<input class="input" id="search" placeholder="Search here">
+									<button class="search-btn" type="submit">Search</button>
 								</form>
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
 
 						<!-- ACCOUNT -->
-						<div class="col-md-4 clearfix">
+						<div class="col-md-4 clearfix" style="margin-top: 20px;">
 							<div class="header-ctn">
 								<!-- Wishlist -->
 								<div>
-									<a href="#">
+									<a href="/fav/checkLogin.do">
 										<i class="fa fa-heart"></i>
 										<span>WishList</span>
-										<div class="qty">2</div>
+										<!--  <div class="qty" style="">2</div>-->
 									</a>
 								</div>
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+								<div>
+									<a href="/cart/checkLogin.do">
 										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-										<div class="qty">3</div>
+										<span>Cart</span>
 									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: $2940.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">View Cart</a>
-											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
 								</div>
 								<!-- /Cart -->
 
 								<div>
-									<a href="/login.do">
+									<a href="/mypage.do">
 										<i class="far fa-user"></i>
 										<span>MyPage</span>
 									</a>
 								</div>
-
-								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
-								<!-- /Menu Toogle -->
 							</div>
 						</div>
 						<!-- /ACCOUNT -->
@@ -122,10 +92,10 @@
 			<div class="container">
 					<div class="col-md-12" style="margin-top:20px;">
 						<ul class="nav navbar text-center">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#">All Categories</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">Headphones</a></li>
+							<li class="active"><a href="/home.do">Home</a></li>
+							<li><a href="/allProduct.do">모든 상품</a></li>
+							<li></li>
+							<li></li>
 						</ul>
 				</div>
 				<!-- /row -->

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.project.mapper.UserMapper">
+
+	<select id="createKakaoUser" parameterType="egovframework.project.model.entity.User">
+			INSERT INTO user(name, email, phone, address, password, kakaoId, createDate) VALUES (#{name}, #{email}, #{phone}, #{address}, #{password}, #{kakaoId}, now())
+	</select>
+	
+	<select id="createNaverUser" parameterType="egovframework.project.model.entity.User">
+			INSERT INTO user(name, email, phone, address, password, naverId, createDate) VALUES (#{name}, #{email}, #{phone}, #{address}, #{password}, #{naverId}, now())
+	</select>
+	
+	<select id="create" parameterType="egovframework.project.model.entity.User">
+			INSERT INTO user(userid, name, email, phone, address, password, createDate) VALUES (#{userid}, #{name}, #{email}, #{phone},  #{address}, #{password}, now())
+	</select>
+	
+	<select id="existId" parameterType="String" resultType="egovframework.project.model.entity.User">
+			select * FROM user WHERE user.userid = #{userid}
+	</select>
+	
+	<select id="loginCheck" parameterType="egovframework.project.model.entity.User" resultType="egovframework.project.model.entity.User">
+			select * FROM user WHERE user.userid = #{userid} and user.password = #{password}
+	</select>
+	
+	<select id="checkUserPassword" parameterType="egovframework.project.model.entity.User" resultType="egovframework.project.model.entity.User">
+			select * FROM user
+			WHERE (user.userid = #{userid} or user.kakaoId = #{userid} or user.naverId = #{userid}) and user.password = #{password}
+	</select>
+	
+	<select id="getUser" parameterType="egovframework.project.model.entity.User" resultType="egovframework.project.model.entity.User">
+			select * FROM user
+			WHERE user.userid = #{userid} or user.kakaoId = #{userid} or user.naverId = #{userid}
+	</select>
+	
+	<delete id="delete" parameterType="String">
+			DELETE FROM user
+			WHERE user.userid = #{id} or user.kakaoId = #{id} or user.naverId = #{id}
+	</delete>
+	
+	<update id="update" parameterType="egovframework.project.model.entity.User">
+			UPDATE user
+			SET user.email = #{email}, user.phone = #{phone}, user.address = #{address}, user.password = #{password}
+			WHERE user.userid = #{userid} or user.kakaoId = #{userid} or user.naverId = #{userid}
+	</update>
+	
+</mapper>

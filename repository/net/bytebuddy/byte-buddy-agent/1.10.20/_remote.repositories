@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Dec 24 09:17:15 KST 2021
+byte-buddy-agent-1.10.20.pom>mvn2s=
+byte-buddy-agent-1.10.20-sources.jar>mvn2s=
+byte-buddy-agent-1.10.20.jar>mvn2s=

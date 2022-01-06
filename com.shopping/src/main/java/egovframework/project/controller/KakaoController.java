@@ -48,7 +48,10 @@ public class KakaoController{
 			request.setAttribute("kakaoId", kakaoUser.getId());
 			request.setAttribute("name", kakaoUser.getNickname());
 			return "user/kakaoJoin.tiles";
-		} else return "main/main.tiles";
+		} else {
+			session.setAttribute("id", kakaoUser.getId()+"");
+			return "redirect:/home.do";
+		}
 	}
 	
 	public KakaoUser getUserInfo (String access_token) throws IOException {
@@ -73,8 +76,10 @@ public class KakaoController{
 		System.out.println(result);
 		
 		Gson gson = new Gson();
+		@SuppressWarnings("deprecation")
 		JsonParser parser = new JsonParser();
-        JsonElement element = parser.parse(result);
+        @SuppressWarnings("deprecation")
+		JsonElement element = parser.parse(result);
         
         int id = element.getAsJsonObject().get("id").getAsInt();
         JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();

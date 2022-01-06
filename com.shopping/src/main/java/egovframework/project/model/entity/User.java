@@ -18,11 +18,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-//@EntityListeners(AuditingEntityListener.class)
 public class User {
-	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private int id; // 번호
 	
 	private String userid; // 아이디
@@ -33,7 +30,7 @@ public class User {
 	private String password;
 	private String auth;
 	private long kakaoId;
-	private long naverId;
+	private String naverId;
 	private boolean deleted; 
 	
 	// cart, fav, review

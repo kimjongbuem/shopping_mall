@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Dec 24 09:19:00 KST 2021
+spring-boot-starter-logging-2.6.1.jar>mvn2s=
+spring-boot-starter-logging-2.6.1-sources.jar>mvn2s=
+spring-boot-starter-logging-2.6.1.pom>mvn2s=

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.project.mapper.CartMapper">
+
+	<select id="selectAllCart" parameterType="int" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, price, imgUrl_1, cp.name as companyName, sale, qty, ((price - (price  * sale / 100 )) * qty) as total, (price - (price  * sale / 100 )) as curPrice
+			from cart c, product p, company cp
+			where c.userId = #{id} and c.productId = p.id and cp.id = p.companyId
+	</select>
+	
+	<select id="existProductInCart" parameterType="egovframework.project.model.dto.UserAndProductDto" resultType="int">
+		select count(*) from cart where userId = #{userId} and productId = #{productId}
+	</select>
+	
+	<insert id="insertCart" parameterType="egovframework.project.model.dto.CartDto">
+		insert into cart(userId,productId,createDate, qty) values(#{userId},#{productId}, now(),#{qty})
+	</insert>
+	
+	<update id="addProductQtyInCart" parameterType="egovframework.project.model.dto.CartDto">
+		update cart set qty = qty + #{qty} where userId = #{userId} and productId = #{productId}
+	</update>
+	
+	<select id="modifyOptionQty" parameterType="egovframework.project.model.dto.ProductTotalDto" resultType="int">
+		select (qty * price)as total from cart c, product p where userId = #{userId} and productId = #{productId} and c.productId = p.id
+	</select>
+	
+	<delete id="deleteProduct" parameterType="egovframework.project.model.dto.CartDto">
+		DELETE FROM cart
+		WHERE userId = #{userId} and productId = #{productId}
+	</delete>
+	
+	<delete id="deleteAllProduct" parameterType="long">
+		DELETE FROM cart
+		WHERE userId = #{userId}
+	</delete>
+
+</mapper>

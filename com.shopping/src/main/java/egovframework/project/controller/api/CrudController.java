@@ -6,7 +6,7 @@ import egovframework.project.service.BaseService;
 
 
 @Component
-public abstract class CrudController<Entity> implements ControllerCrud{
+public abstract class CrudController<Entity>{
 	
 	@Autowired
     protected BaseService<Entity> baseService;

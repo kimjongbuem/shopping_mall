@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Dec 24 13:25:22 KST 2021
+@default-mvn2s-https\://repo1.maven.org/maven2/.lastUpdated=1640319919512
+http\://www.egovframe.go.kr/maven/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1640319922121
+http\://maven.egovframe.kr\:8080/maven/.error=
+https\://repo1.maven.org/maven2/.error=Could not transfer artifact org.springframework\:spring-core\:jar\:5.2.4.RELEASE from/to mvn2s (https\://repo1.maven.org/maven2/)\: C\:\\eGovFrameDev-3.9.0-64bit\\shopping_mall_project\\repository\\org\\springframework\\spring-core\\5.2.4.RELEASE\\aether-5db1052c-9460-4a31-a55a-59bba783089c-spring-core-5.2.4.RELEASE.jar-in-progress (\uC9C0\uC815\uB41C \uD30C\uC77C\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4)
+http\://www.egovframe.go.kr/maven/.lastUpdated=1640319919653
+http\://maven.egovframe.kr\:8080/maven/.lastUpdated=1640319919543

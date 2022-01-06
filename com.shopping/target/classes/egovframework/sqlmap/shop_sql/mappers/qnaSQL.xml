@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.project.mapper.QnaMapper">
+
+	<select id="getProductDetailQnas" parameterType="egovframework.project.model.dto.QnaDto" resultType="egovframework.project.model.dto.QnaDto">
+			select q.id as id, q.userId as userId, q.productId as productId, q.optionNo as optionNo, q.password as password, q.detail as detail, ur.name as name, q.createDate as createDate
+			from qna q, user ur
+			where q.productId = #{productId} and q.userId = ur.id
+	</select>
+	
+	<select id="getQna" parameterType="egovframework.project.model.dto.QnaDto" resultType="egovframework.project.model.dto.QnaDto">
+			select *
+			from qna 
+			where id = #{id}
+	</select>
+	
+	<select id="checkPassword" parameterType="egovframework.project.model.dto.QnaDto" resultType="egovframework.project.model.dto.QnaDto">
+			select *
+			from qna 
+			where id = #{id} and password = #{password}
+	</select>
+	
+	<delete id="removeQna" parameterType="long">
+			delete from qna
+			where id = #{qnaId}
+	</delete>
+	
+	<update id="updateQna" parameterType="egovframework.project.model.dto.QnaDto">
+			update qna set detail = #{detail} where id = #{id}
+	</update>
+	
+	<insert id="writeQna" parameterType="egovframework.project.model.dto.QnaDto">
+		insert into qna(userId, productId, detail, optionNo) values(#{userId}, #{productId}, #{detail}, #{optionNo})
+	</insert>
+	
+</mapper>

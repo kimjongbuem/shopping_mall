@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.project.mapper.ProductMapper">
+
+	<select id="selectAllProduct" parameterType="int" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, c.name as companyName, price, imgUrl_1, sale from product p, company c where c.id = p.companyId limit #{id}
+	</select>
+	
+	<select id="selectByProductName" parameterType="String" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, c.name as companyName, price, imgUrl_1, sale from product p, company c where c.id = p.companyId and productName LIKE CONCAT('%', #{productName}, '%')
+	</select>
+	
+	<select id="selectByCompanyName" parameterType="String" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, c.name as companyName, price, imgUrl_1, sale from product p, company c where c.id = p.companyId and c.name LIKE CONCAT('%', #{companyName}, '%')
+	</select>
+	
+	<select id="getProductDetail" parameterType="long" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, c.name as companyName, price, imgUrl_1, detail, sale
+			from product p, company c
+			where p.companyId = c.id and p.id = #{productId}
+	</select>
+	
+	<select id="searchCheckedBox" parameterType="egovframework.project.model.dto.CheckBoxCompanyDto" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, c.name as companyName, price, imgUrl_1, sale
+			from product p, company c 
+			<where>
+				c.id = p.companyId and 	
+				
+				<choose>
+					<when test="companyId == null">
+						1 = 1
+					</when>
+					<when test="companyId != null">
+						c.id in <foreach item="companyId" collection="companyId" open="(" close=")" separator="," >
+							#{companyId}
+						</foreach>
+					</when>
+				</choose>
+			</where>
+	</select>
+	
+</mapper>

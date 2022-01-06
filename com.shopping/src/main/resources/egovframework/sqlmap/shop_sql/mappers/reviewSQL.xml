@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.project.mapper.ReviewMapper">
+
+	<select id="getProductDetailReviews" parameterType="egovframework.project.model.dto.ReviewDto" resultType="egovframework.project.model.dto.ReviewDto">
+			select rw.id as id, rw.userId as userId, rw.productId as productId, rw.detail as detail, ur.name as name, rw.createDate as createDate, CASE WHEN rw.userId = #{userId} THEN TRUE ELSE FALSE END AS equalId
+			from review rw, user ur
+			where rw.productId = #{productId} and rw.userId = ur.id
+	</select>
+	
+	<select id="getReview" parameterType="long" resultType="egovframework.project.model.dto.ReviewDto">
+			select id, userId, productId, detail, createDate
+			from review
+			where id = #{reviewId}
+	</select>
+	
+	<delete id="removeReview" parameterType="egovframework.project.model.dto.ReviewDto">
+			delete from review
+			where id = #{id}
+	</delete>
+	
+	<update id="modifyReview" parameterType="egovframework.project.model.dto.ReviewDto">
+			update review set detail = #{detail} where id = #{id}
+	</update>
+	
+	<insert id="writeReview" parameterType="egovframework.project.model.dto.ReviewDto">
+			insert into review(userId, productId, detail) values(#{userId}, #{productId}, #{detail})
+	</insert>
+	
+</mapper>

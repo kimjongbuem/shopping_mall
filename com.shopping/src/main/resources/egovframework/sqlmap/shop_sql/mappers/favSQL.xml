@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.project.mapper.FavoriteMapper">
+
+	<select id="selecAllFav" parameterType="long" resultType="egovframework.project.model.dto.ProductDto">
+			select p.id as productId, productName, price, imgUrl_1, sale
+			from favorite f, product p
+			where f.userId = #{id} and f.productId = p.id
+	</select>
+	
+	<insert id="addFav" parameterType="egovframework.project.model.dto.UserAndProductDto">
+			insert into favorite(userId, productId) values(#{userId}, #{productId})
+	</insert>
+	
+	<select id="getProductOfFavorite" resultType="egovframework.project.model.dto.FavoriteDto" parameterType="egovframework.project.model.dto.FavoriteDto">
+			select *
+			from favorite
+			where userId = #{userId} and productId = #{productId}
+	</select>
+	
+	<delete id="removeFav" parameterType="egovframework.project.model.dto.UserAndProductDto">
+			delete from favorite
+			where userId = #{userId} and productId = #{productId}
+	</delete>
+	
+</mapper>
