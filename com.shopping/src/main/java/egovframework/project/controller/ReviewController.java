@@ -68,7 +68,7 @@ public class ReviewController {
 		
 		ReviewDto reviewDto = ReviewDto.builder().
 							  userId(userId).
-							  detail(detail).
+							  detail(detail.replaceAll("&lt(;)?(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?&gt(;)?", "")).
 							  name(name).
 							  productId(productId).	
 							  build();

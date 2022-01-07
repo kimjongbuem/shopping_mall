@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import egovframework.project.model.dto.CheckBoxCompanyDto;
 import egovframework.project.model.dto.FavoriteDto;
 import egovframework.project.model.dto.ProductDto;
+import egovframework.project.model.dto.ProductSizeDto;
 import egovframework.project.model.dto.QnaDto;
 import egovframework.project.model.dto.ReviewDto;
 import egovframework.project.model.dto.UserAndProductDto;

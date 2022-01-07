@@ -69,12 +69,9 @@ public class UserService extends BaseService<User>{
 
 	@Override
 	public void delete(Long id) {// 없음 //
-	}
-	
-	public void delete(String id) {
 		userMapper.delete(id);
 	}
-
+	
 	public int checkPassword(String password) {
 		
 		try {

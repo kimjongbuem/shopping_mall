@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import egovframework.project.mapper.ProductMapper;
 import egovframework.project.model.dto.CheckBoxCompanyDto;
 import egovframework.project.model.dto.ProductDto;
+import egovframework.project.model.dto.ProductSizeDto;
 import egovframework.project.utils.Page;
 
 @Service
@@ -32,6 +33,10 @@ public class ProductService {
 	}
 	public List<ProductDto> searchCheckedBox(CheckBoxCompanyDto checkBoxCompanyDto) {
 		return productMapper.searchCheckedBox(checkBoxCompanyDto);
+	}
+
+	public List<ProductSizeDto> getSizeList(long productId) {
+		return productMapper.getSizeList(productId);
 	}
 
 }

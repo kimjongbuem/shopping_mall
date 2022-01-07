@@ -82,7 +82,7 @@ public class QnaController {
 		
 		QnaDto qnaDto = QnaDto.builder().
 							  userId(userId).
-							  detail(detail).
+							  detail(detail.replaceAll("&lt(;)?(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?&gt(;)?", "")).
 							  password(password).
 							  productId(productId).
 							  optionNo(optionNo).

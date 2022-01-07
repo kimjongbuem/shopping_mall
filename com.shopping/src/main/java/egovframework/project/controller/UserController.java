@@ -138,7 +138,9 @@ public class UserController extends CrudController<User>{
 	@RequestMapping(value = "/delete.do")
 	public void deleteUser(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
-		userService.delete((String)req.getSession().getAttribute("id"));
+		User user = userService.getUser(req);
+		
+		userService.delete(user.getId());
 		req.getSession().removeAttribute("id");
 		
 		res.setContentType("text/html; charset=UTF-8");

@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class User {
 
-	private int id; // 번호
+	private long id; // 번호
 	
 	private String userid; // 아이디
 	private String name; // 이름

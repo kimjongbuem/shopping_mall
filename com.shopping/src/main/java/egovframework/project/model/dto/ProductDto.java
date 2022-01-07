@@ -20,4 +20,5 @@ public class ProductDto {
 	private int qty;
 	private long total;
 	private long curPrice;
+	private String size;
 }

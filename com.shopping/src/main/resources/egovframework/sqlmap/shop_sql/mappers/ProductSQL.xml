@@ -20,6 +20,12 @@
 			where p.companyId = c.id and p.id = #{productId}
 	</select>
 	
+	<select id="getSizeList" parameterType="long" resultType="egovframework.project.model.dto.ProductSizeDto">
+			select *
+			from product_size ps
+			where ps.productId = #{productId}
+	</select>
+	
 	<select id="searchCheckedBox" parameterType="egovframework.project.model.dto.CheckBoxCompanyDto" resultType="egovframework.project.model.dto.ProductDto">
 			select p.id as productId, productName, c.name as companyName, price, imgUrl_1, sale
 			from product p, company c 

@@ -13,6 +13,7 @@
   			<section id="container" class="main">
 				<tiles:insertAttribute name="content" ignore="true"/>
  			</section>
+ 			<tiles:insertAttribute name="footer" ignore="true"/>
   		</div>
   	</body>
 </html>

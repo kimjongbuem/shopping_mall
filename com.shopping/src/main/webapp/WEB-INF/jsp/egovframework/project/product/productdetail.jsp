@@ -229,21 +229,6 @@ smail{
 								<span class="product-available">In Stock</span>
 							</div>
 							<p>${product.detail}</p>
-							<div class="product-options">
-								<label style="display: inline;">
-									Size
-									<select class="input-select">
-										<option value="0">X</option>
-									</select>
-								</label>
-								<label style="display: inline;">
-									Color
-									<select class="input-select">
-										<option value="0">Red</option>
-									</select>
-								</label>
-							</div>
-
 							<div class="add-to-cart">
 								<div class="qty-label">
 									Qty

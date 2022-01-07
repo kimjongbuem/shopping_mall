@@ -27,12 +27,12 @@
 						</label>
 					
 						<div class="col-md-12">
-							<div><strong>작성자</strong></div>
+							<strong>작성자</strong>
 							<input class="input" name="name" type="text" value="${userName}" readonly>
-							<div>
-								<strong>패스워드</strong>
-								<input class="form-control"name="password" type="password" maxlength="4" value="">
-							</div>
+							
+							<strong>패스워드</strong>
+							<input class="form-control"name="password" type="password" maxlength="4">
+						
 							<textarea id="detail" name="detail" required></textarea>
 							    <script>
 							      $('#detail').summernote({

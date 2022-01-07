@@ -16,7 +16,7 @@
 	}
 	function checkUndisabledSignBtn(password){
 		if(password == 1) $("#kakaoBtn").removeAttr("disabled");
-		else $("#kakaoBtn").attr("kakaoBtn", true);
+		else $("#kakaoBtn").attr("disabled", true);
 	}
 	
 	$(function(){

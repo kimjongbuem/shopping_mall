@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>RePut</title>
 </head>
 
 <script>
 	function goPopup(){
-	    var pop = window.open("/shop/user/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes");
+	    var pop = window.open("/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes");
 	}
 	function jusoCallBack(roadFullAddr){
 		$("#Addr").val(roadFullAddr);
@@ -85,12 +85,7 @@
 					alert("서버 요청 실패!")
 				}
 			})
-		});
-		
-		
-		
-		
-		
+		});	
 	});
 </script>
 

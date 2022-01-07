@@ -30,7 +30,14 @@
 	</update>
 	
 	<insert id="writeQna" parameterType="egovframework.project.model.dto.QnaDto">
-		insert into qna(userId, productId, detail, optionNo) values(#{userId}, #{productId}, #{detail}, #{optionNo})
+		<choose>
+			<when test="password == null">
+				insert into qna(userId, productId, detail, optionNo) values(#{userId}, #{productId}, #{detail}, #{optionNo})
+			</when>
+			<when test="password != null">
+				insert into qna(userId, productId, detail, optionNo, password) values(#{userId}, #{productId}, #{detail}, #{optionNo}, #{password})
+			</when>
+		</choose>	
 	</insert>
 	
 </mapper>

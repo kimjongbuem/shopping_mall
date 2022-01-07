@@ -17,7 +17,7 @@ public class CartService {
 	@Autowired
 	private CartMapper cartMapper;
 	
-	public List<ProductDto> selectAllCart(int id) {
+	public List<ProductDto> selectAllCart(long id) {
 		return cartMapper.selectAllCart(id);
 	}
 

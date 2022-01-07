@@ -32,9 +32,9 @@
 			WHERE user.userid = #{userid} or user.kakaoId = #{userid} or user.naverId = #{userid}
 	</select>
 	
-	<delete id="delete" parameterType="String">
+	<delete id="delete" parameterType="long">
 			DELETE FROM user
-			WHERE user.userid = #{id} or user.kakaoId = #{id} or user.naverId = #{id}
+			WHERE user.id = #{id}
 	</delete>
 	
 	<update id="update" parameterType="egovframework.project.model.entity.User">

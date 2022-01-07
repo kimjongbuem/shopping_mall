@@ -17,4 +17,5 @@ public class CartDto {
 	private long productId;
 	private int qty;
 	private Date createDate;
+	private String size;
 }

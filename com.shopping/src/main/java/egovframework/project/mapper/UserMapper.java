@@ -11,7 +11,7 @@ public interface UserMapper {
 	User loginCheck(User user);
 	void createNaverUser(User user);
 	User checkUserPassword(User user);
-	void delete(String id);
+	void delete(Long id);
 	void update(User user);
 	User getUser(User user);
 }

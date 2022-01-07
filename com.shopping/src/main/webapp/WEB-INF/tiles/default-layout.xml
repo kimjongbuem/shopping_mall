@@ -8,6 +8,7 @@
 	<definition name="main.tiles" 	 		template="/WEB-INF/jsp/egovframework/project/cmmn/main-layouts.jsp">
 	  	<put-attribute name="head"    		value="/WEB-INF/jsp/egovframework/project/cmmn/default-head.jsp" />
 	  	<put-attribute name="header" 		value="/WEB-INF/jsp/egovframework/project/cmmn/default-header.jsp" />
+	  	<put-attribute name="footer" 		value="/WEB-INF/jsp/egovframework/project/cmmn/default-footer.jsp" />
 	  	<put-attribute name="content"  		value="" />
 	</definition>
 	<definition name="*/*.tiles" extends="main.tiles">

@@ -10,15 +10,15 @@
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	function goPopup(){
-	    var pop = window.open("/shop/user/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes");
+	    var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes");
 	}
 	function jusoCallBack(roadFullAddr){
 		$("#Addr").val(roadFullAddr);
 	}
 	
 	function checkUndisabledSignBtn(password){
-		if(password == 1) $("#kakaoBtn").removeAttr("disabled");
-		else $("#kakaoBtn").attr("kakaoBtn", true);
+		if(password == 1) $("#navetBtn").removeAttr("disabled");
+		else $("#navetBtn").attr("disabled", true);
 	}
 	
 	$(function(){

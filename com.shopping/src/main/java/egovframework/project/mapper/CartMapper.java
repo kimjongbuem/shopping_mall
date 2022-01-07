@@ -11,7 +11,7 @@ import egovframework.rte.psl.dataaccess.mapper.Mapper;
 @Mapper
 public interface CartMapper {
 
-	List<ProductDto> selectAllCart(int id);
+	List<ProductDto> selectAllCart(long id);
 
 	int existProductInCart(UserAndProductDto userAndProductDto);
 

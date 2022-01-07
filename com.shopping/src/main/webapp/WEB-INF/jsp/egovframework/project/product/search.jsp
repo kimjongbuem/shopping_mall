@@ -176,11 +176,6 @@
 							</c:forEach>
 							<!-- /product -->
 						</div>
-						
-						<div id="more_btn_div" style="align:center; margin-top : 50px;">
-							<input type="button" class="input" id="more_btn" value="더보기" style="">
-						</div>
-						
 						</div>
 						<!-- /store products -->
 

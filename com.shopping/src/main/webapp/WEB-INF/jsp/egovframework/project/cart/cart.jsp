@@ -151,7 +151,7 @@ $(function(){
 									<span class="qty-up">+</span>
 									<span class="qty-down">-</span>
 									<input type="hidden" class="productId" value="${userCartStoreList.productId}"/>
-									<input type="hidden" class="curPrice" value="${userCartStoreList.curPrice}"/>
+									<input type="hidden" class="curPrice" value="${userCartStoreList.price * (100 - userCartStoreList.sale) / 100}"/>
 								</div>
 								<div style="padding-top : 30px;">
 									<a href="#" class="cart-delete" style="cursor: pointer;">
